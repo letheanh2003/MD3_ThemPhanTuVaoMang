@@ -3,18 +3,24 @@ import java.util.Scanner;
 
 public class BT2_ThemPhanTuVaoMang {
     public static void main(String[] args) {
-        int[] array = {2, 4, 64, 7, 8, 11, 15, 0, 0};
-        Scanner input = new Scanner(System.in);
-        System.out.print("Nhập phần tử muốn xóa: ");
-        int X = input.nextInt();
-        for (int i = 0; i < array.length; i++) {
-            if (X == array[i]) {
-                array[i] = 0;
-                System.out.print((array[i]) + ",");
-            } else {
-
-                System.out.print((array[i]) + ",");
-            }
+        // input arr.length
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập Độ Dài Mảng: ");
+        int arrLength = sc.nextInt();
+        int[] arr = new int[arrLength];
+        for (int i = 0; i < arrLength; i++) {
+            System.out.println("Nhập Phần Tử: " + i);
+            arr[i] = sc.nextInt();
         }
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Nhập phần Tử Muốn Thêm Vào: ");
+        int[] newArr = new int[arrLength + 1];
+        for (int i = 0; i < arr.length; i++) {
+            newArr[i] = arr[i];
+        }
+        // new arr{0,1,2,3} 4
+        newArr[newArr.length - 1] = sc.nextInt();
+        System.out.println(Arrays.toString(newArr));
+        // them phan tu => nhap => length = arraylength +  1 => them no vao cuoi => in ra
     }
 }
